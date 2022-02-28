@@ -1,0 +1,13 @@
+
+<div class="breadcrumb-wrapper">
+  <ul class="breadcrumb-list">
+    <li *ngFor="let crumb of service.breadcrumbs; let last=last" class="breadcrumb-item" (click)="navigate(crumb)">
+      <a [ngClass]="{ 'breadcrumb-active' : last }">
+        {{ crumb.label }}
+      </a>
+      <span *ngIf="!last"> > </span>
+    </li>
+  </ul>
+</div>
+
+

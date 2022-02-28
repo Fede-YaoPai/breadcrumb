@@ -1,0 +1,27 @@
+.breadcrumb-wrapper {
+  .breadcrumb-list {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+
+    .breadcrumb-item {
+      a {
+        color: blue;
+        cursor: pointer;
+
+        &.breadcrumb-active {
+          color: #555;
+          cursor: unset;
+        }
+      }
+
+      span {
+        margin: 0 12px;
+      }
+
+
+    }
+  }
+}
+
+
