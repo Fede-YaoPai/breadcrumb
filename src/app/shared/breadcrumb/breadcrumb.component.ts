@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BreadcrumbService } from 'src/app/core/services/breadcrumb.service';
+import { AngularBreadcrumbFypService } from 'angular-breadcrumb-fyp';
 
 
 @Component({
@@ -9,8 +9,7 @@ import { BreadcrumbService } from 'src/app/core/services/breadcrumb.service';
 })
 export class BreadcrumbComponent implements OnInit {
 
-  constructor(public bcs: BreadcrumbService) {
-  }
+  constructor(public bcs: AngularBreadcrumbFypService) {}
 
   ngOnInit(): void {
   }
