@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NavigationService } from 'src/app/core/services/navigation.service';
 
 @Component({
   selector: 'app-about-child',
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AboutChildComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(public navigation: NavigationService) { }
 
   ngOnInit(): void {
 

@@ -8,19 +8,23 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    component: AboutComponent,
-    data: { crumb: 'About' }
+    component: AboutComponent
   },
   {
     path: 'child',
-    component: AboutChildComponent,
-    data: { crumb: 'About child' }
-  },
-  {
-    path: 'grandchild',
-    component: AboutGrandchildComponent,
-    data: { crumb: 'About grandchild' }
-  },
+    data: { crumb: 'About child' },
+    children: [
+      {
+        path: '',
+        component: AboutChildComponent
+      },
+      {
+        path: 'grandchild',
+        component: AboutGrandchildComponent,
+        data: {crumb: 'About grandchild'}
+      }
+    ]
+  }
 ]
 
 @NgModule({
