@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, ActivationEnd, Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { Breadcrumb } from 'src/app/models/breadcrumb.model';
 
 
@@ -8,7 +9,8 @@ import { Breadcrumb } from 'src/app/models/breadcrumb.model';
 })
 export class BreadcrumbService {
 
-  public breadcrumbs: Breadcrumb[] = [];
+  public crumbs$: Subject<Breadcrumb[]> = new Subject<Breadcrumb[]>();
+  private breadcrumbs: Breadcrumb[] = [];
   private paths: string[] = [];
 
   constructor(private router: Router) {
@@ -49,6 +51,8 @@ export class BreadcrumbService {
 
       this.buildBreadCrumb(parent, targetBreadcrumbs, targetPaths, true);
     }
+
+    this.crumbs$.next(this.breadcrumbs);
   }
 
   // If current snapshot has an empty string as a path, the method is going to fetch it from its parent (see instructions on how to set routing with this breadcrumb component)

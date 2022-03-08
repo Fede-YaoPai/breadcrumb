@@ -9,7 +9,8 @@ import { BreadcrumbService } from 'src/app/core/services/breadcrumb.service';
 })
 export class BreadcrumbComponent implements OnInit {
 
-  constructor(public service: BreadcrumbService) {}
+  constructor(public bcs: BreadcrumbService) {
+  }
 
   ngOnInit(): void {
   }
