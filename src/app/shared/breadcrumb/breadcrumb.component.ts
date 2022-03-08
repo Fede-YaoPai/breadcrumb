@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BreadcrumbService } from 'src/app/core/services/breadcrumb.service';
-import { Breadcrumb } from 'src/app/models/breadcrumb.model';
+
 
 @Component({
   selector: 'app-breadcrumb',
@@ -9,18 +9,9 @@ import { Breadcrumb } from 'src/app/models/breadcrumb.model';
 })
 export class BreadcrumbComponent implements OnInit {
 
-
-  constructor(public service: BreadcrumbService) {
-
-  }
+  constructor(public service: BreadcrumbService) {}
 
   ngOnInit(): void {
-
   }
-
-  public navigate(crumb: Breadcrumb): void {
-    this.service.navigateBreadCrumb(crumb);
-  }
-
 
 }
